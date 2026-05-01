@@ -1,23 +1,27 @@
 PROGRAM Student_score
 IMPLICIT NONE
-REAL DIMENSION(10)::X
-INTERGER DIMENSION(10)::i
-PRINT*,enter 10 scores
-IF X= 80>=100
-PRINT*, 'grade A'AND 'DISTINCTION'
+REAL DIMENSION(10):: scores
+INTERGER ::i
+CHARACTER(LEN=1) :: grade
+CHARACTER(LEN=12) :: remark
+DATA scores /85, 62, 45, 38,74, 55, 88, 61,47/
+PRINT*,"score", "grade", "remark"
+DO i= 1,10
+IF (scores(i) >= 80) THEN
+grade = 'A'
+remark = 'Distinction'
+ELSE IF (scores(i) >=60) THEN
+grade = 'B'
+remark = 'Credit'
+ELSE IF (scores(i) >= 40) THEN
+grade = 'C'
+remark = 'Pass'
+ELSE 
+grade = 'F'
+remark = 'Fail'
 END IF
-ELSE X=(60>=79)
-PRINT*, 'grade B'AND 'Credit'
-END ELSE
-ELSE IF X=(40>=59)
-PRINT*, 'grade C' AND 'Pass'
-If x=(0>=39)
-PRINT*,'grade F' AND 'Fail'
-DO i(1,10)
-PRINT*,(1,10)
+PRINT "(I5, T10, A1, T15, A12)", scores(i), grade, remark
 END DO
 END PROGRAM Student_score
-!samuella owusu sekyere
+!Samuella Owusu Sekyere
 !6312824
-
-
